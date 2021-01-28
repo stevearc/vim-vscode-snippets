@@ -1,0 +1,65 @@
+{
+    "GLOBAL array": {
+        "prefix": "gglob",
+        "body": [
+            "\\$GLOBALS[\"${1:key}\"]"
+        ],
+        "description": "$GLOBALS array"
+    },
+    "SERVER array": {
+        "prefix": "gser",
+        "body": [
+            "\\$_SERVER[\"${1:key}\"]"
+        ],
+        "description": "$_SERVER array"
+    },
+    "REQUEST array": {
+        "prefix": "greq",
+        "body": [
+            "\\$_REQUEST[\"${1:key}\"]"
+        ],
+        "description": "$_REQUEST array"
+    },
+    "POST array": {
+        "prefix": "gpost",
+        "body": [
+            "\\$_POST[\"${1:key}\"]"
+        ],
+        "description": "$_POST array"
+    },
+    "GET array": {
+        "prefix": "gget",
+        "body": [
+            "\\$_GET[\"${1:key}\"]"
+        ],
+        "description": "$_GET array"
+    },
+    "FILES array": {
+        "prefix": "gfile",
+        "body": [
+            "\\$_FILES['${1:userfile}']['${2:key}']"
+        ],
+        "description": "$_FILES array"
+    },
+    "ENV array": {
+        "prefix": "genv",
+        "body": [
+            "\\$_ENV[\"${1:key}\"]"
+        ],
+        "description": "$_ENV array"
+    },
+    "COOKIE array": {
+        "prefix": "gcook",
+        "body": [
+            "\\$_COOKIE[\"${1:key}\"]"
+        ],
+        "description": "$_COOKIE array"
+    },
+    "SESSION array": {
+        "prefix": "gss",
+        "body": [
+            "\\$_SESSION[\"${1:key}\"]"
+        ],
+        "description": "$_SESSION array"
+    }
+}

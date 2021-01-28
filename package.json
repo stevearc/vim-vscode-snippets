@@ -1,0 +1,154 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "csharp",
+        "path": "snippets/vscode-csharp-snippets/csharp.json"
+      },
+      {
+        "language": "javascript",
+        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "snippets/vscode-es7-javascript-react-snippets/ts-snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode-es7-javascript-react-snippets/ts-snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "snippets/vscode-Python-Extended/modules.json"
+      },
+      {
+        "language": "go",
+        "path": "snippets/vscode-go/go.json"
+      },
+      {
+        "language": "rust",
+        "path": "snippets/vscode-rust/rust.json"
+      },
+      {
+        "language": "csharp",
+        "path": "snippets/vscode-unity-code-snippets/snippets.json"
+      },
+      {
+        "language": "lua",
+        "path": "snippets/vsc-lua/snippets.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/array.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/class.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/control.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/error.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/function.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/function.php5.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/globalvar.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/loop.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/method.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/method.php5.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/statement.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/tag.json"
+      },
+      {
+        "language": "html",
+        "path": "snippets/php-awesome-snippets/tag.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/array.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/class.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/control.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/error.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/function.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/function.php5.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/globalvar.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/loop.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/method.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/method.php5.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/statement.json"
+      },
+      {
+        "language": "php",
+        "path": "snippets/php-awesome-snippets/tag.json"
+      }
+    ]
+  }
+}

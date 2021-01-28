@@ -1,0 +1,30 @@
+{
+    "PHP tags": {
+        "prefix": "php",
+        "body": [
+            "<?php $0?>"
+        ],
+        "description": "PHP open tag"
+    },
+    "PHP open tag": {
+        "prefix": "po",
+        "body": [
+            "<?php"
+        ],
+        "description": "PHP open tag"
+    },
+    "PHP close tag": {
+        "prefix": "pc",
+        "body": [
+            "?>"
+        ],
+        "description": "PHP close tag"
+    },
+    "PHP echo short tag": {
+        "prefix": "peco",
+        "body": [
+            "<?= \\$${1:variable} ?>"
+        ],
+        "description": "PHP echo short tag"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "https://github.com/J0rgeSerran0/vscode-csharp-snippets.git": "3522981cf1700ce0e7ae13a5b57cfd5d2b67a9d8",
+  "https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git": "4dc37edf61f28f116cdedc2fd1c0ab1fc52cdcee",
+  "https://github.com/tushortz/vscode-Python-Extended.git": "1bdde0639c1fcf9320e35897e0556da6cd30bdd2",
+  "https://github.com/golang/vscode-go.git": "5f88d6149f90bc84fd2a83a856bcd36b3eab226f",
+  "https://github.com/rust-lang/vscode-rust.git": "c957ad5ff0eee266e9b2506ad3367fcef1f17cab",
+  "https://github.com/kleber-swf/vscode-unity-code-snippets.git": "01162b85bfde53593872d586261dff91aad3920d",
+  "https://github.com/keyring/vsc-lua.git": "89fd24921c2dc8eceaf830a28e566a26124d134e",
+  "https://github.com/h4kst3r/php-awesome-snippets.git": "df0fa89381b2c1b3af5fe128dafabf2240e1d266"
+}

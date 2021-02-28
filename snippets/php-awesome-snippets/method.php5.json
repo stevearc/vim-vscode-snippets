@@ -1,150 +1,150 @@
 {
-    "Private method PHP5": {
-        "prefix": "-prif",
-        "body": [
-            "private function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Private method block PHP5"
-    },
-    "Private static method PHP5": {
-        "prefix": "-prisf",
-        "body": [
-            "private static function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Private static method block PHP5"
-    },
-    "Final private method PHP5": {
-        "prefix": "-fprif",
-        "body": [
-            "final private function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Final private method block PHP5"
-    },
-    "Final private static method PHP5": {
-        "prefix": "-fprisf",
-        "body": [
-            "final private static function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Final private static method block PHP5"
-    },
-    "Protected method PHP5": {
-        "prefix": "-prof",
-        "body": [
-            "protected function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Protected method block PHP5"
-    },
-    "Protected static method PHP5": {
-        "prefix": "-prosf",
-        "body": [
-            "protected static function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Protected static method block PHP5"
-    },
-    "Final protected method PHP5": {
-        "prefix": "-fprof",
-        "body": [
-            "final protected function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Final protected method block PHP5"
-    },
-    "Final protected static method PHP5": {
-        "prefix": "-fprosf",
-        "body": [
-            "final protected static function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Final protected static method block PHP5"
-    },
-    "Abstract protected method PHP5": {
-        "prefix": "-aprof",
-        "body": [
-            "abstract protected function ${1:methodName}(${2:parameters});"
-        ],
-        "description": "Abstract protected method statement PHP5"
-    },
-    "Abstract protected static method PHP5": {
-        "prefix": "-aprosf",
-        "body": [
-            "abstract protected static function ${1:methodName}(${2:parameters});"
-        ],
-        "description": "Abstract protected static method statement PHP5"
-    },
-    "Public method PHP5": {
-        "prefix": "-pubf",
-        "body": [
-            "public function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Public method block PHP5"
-    },
-    "Public static method PHP5": {
-        "prefix": "-pubsf",
-        "body": [
-            "public static function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Public static method block PHP5"
-    },
-    "Final public method PHP5": {
-        "prefix": "-fpubf",
-        "body": [
-            "final public function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Final public method block PHP5"
-    },
-    "Final public static method PHP5": {
-        "prefix": "-fpubsf",
-        "body": [
-            "final public static function ${1:methodName}(${2:parameters})",
-            "{",
-            "\t${0:# code...}",
-            "}"
-        ],
-        "description": "Final public static method block PHP5"
-    },
-    "Abstract public method PHP5": {
-        "prefix": "-apubf",
-        "body": [
-            "abstract public function ${1:methodName}(${2:parameters});"
-        ],
-        "description": "Abstract public method statement PHP5"
-    },
-    "Abstract public static method PHP5": {
-        "prefix": "-apubsf",
-        "body": [
-            "abstract public static function ${1:methodName}(${2:parameters});"
-        ],
-        "description": "Abstract public static method statement PHP5"
-    }
+  "Private method PHP5": {
+    "prefix": "-prif",
+    "body": [
+      "private function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Private method block PHP5"
+  },
+  "Private static method PHP5": {
+    "prefix": "-prisf",
+    "body": [
+      "private static function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Private static method block PHP5"
+  },
+  "Final private method PHP5": {
+    "prefix": "-fprif",
+    "body": [
+      "final private function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Final private method block PHP5"
+  },
+  "Final private static method PHP5": {
+    "prefix": "-fprisf",
+    "body": [
+      "final private static function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Final private static method block PHP5"
+  },
+  "Protected method PHP5": {
+    "prefix": "-prof",
+    "body": [
+      "protected function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Protected method block PHP5"
+  },
+  "Protected static method PHP5": {
+    "prefix": "-prosf",
+    "body": [
+      "protected static function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Protected static method block PHP5"
+  },
+  "Final protected method PHP5": {
+    "prefix": "-fprof",
+    "body": [
+      "final protected function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Final protected method block PHP5"
+  },
+  "Final protected static method PHP5": {
+    "prefix": "-fprosf",
+    "body": [
+      "final protected static function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Final protected static method block PHP5"
+  },
+  "Abstract protected method PHP5": {
+    "prefix": "-aprof",
+    "body": [
+      "abstract protected function ${1:methodName}(${2:parameters});"
+    ],
+    "description": "Abstract protected method statement PHP5"
+  },
+  "Abstract protected static method PHP5": {
+    "prefix": "-aprosf",
+    "body": [
+      "abstract protected static function ${1:methodName}(${2:parameters});"
+    ],
+    "description": "Abstract protected static method statement PHP5"
+  },
+  "Public method PHP5": {
+    "prefix": "-pubf",
+    "body": [
+      "public function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Public method block PHP5"
+  },
+  "Public static method PHP5": {
+    "prefix": "-pubsf",
+    "body": [
+      "public static function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Public static method block PHP5"
+  },
+  "Final public method PHP5": {
+    "prefix": "-fpubf",
+    "body": [
+      "final public function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Final public method block PHP5"
+  },
+  "Final public static method PHP5": {
+    "prefix": "-fpubsf",
+    "body": [
+      "final public static function ${1:methodName}(${2:parameters})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Final public static method block PHP5"
+  },
+  "Abstract public method PHP5": {
+    "prefix": "-apubf",
+    "body": [
+      "abstract public function ${1:methodName}(${2:parameters});"
+    ],
+    "description": "Abstract public method statement PHP5"
+  },
+  "Abstract public static method PHP5": {
+    "prefix": "-apubsf",
+    "body": [
+      "abstract public static function ${1:methodName}(${2:parameters});"
+    ],
+    "description": "Abstract public static method statement PHP5"
+  }
 }

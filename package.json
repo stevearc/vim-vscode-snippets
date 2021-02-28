@@ -31,7 +31,7 @@
       },
       {
         "language": "python",
-        "path": "snippets/vscode-Python-Extended/modules.json"
+        "path": "snippets/vscode-python-snippet-pack/python_snippets.json"
       },
       {
         "language": "go",

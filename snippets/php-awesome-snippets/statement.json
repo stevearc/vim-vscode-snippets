@@ -1,65 +1,65 @@
 {
-    "define": {
-        "prefix": "df",
-        "body": [
-            "define(\"${1:CONSTANT}\", \"${2:value}\");"
-        ],
-        "description": "'define' call"
-    },
-    "include": {
-        "prefix": "inc",
-        "body": [
-            "include ${1:__DIR__.}'${2:path_to_filename}';"
-        ],
-        "description": "'include' statement"
-    },
-    "include_once": {
-        "prefix": "inco",
-        "body": [
-            "include_once ${1:__DIR__.}'${2:path_to_filename}';"
-        ],
-        "description": "'include_once' statement"
-    },
-    "require": {
-        "prefix": "rqr",
-        "body": [
-            "require ${1:__DIR__.}'${2:path_to_filename}';"
-        ],
-        "description": "'require' statement"
-    },
-    "require_once": {
-        "prefix": "rqro",
-        "body": [
-            "require_once ${1:__DIR__.}'${2:path_to_filename}';"
-        ],
-        "description": "'require_once' statement"
-    },
-    "echo": {
-        "prefix": "eco",
-        "body": [
-            "echo \"${1:text}\";"
-        ],
-        "description": "'echo' statement"
-    },
-    "print_r": {
-        "prefix": "pr",
-        "body": [
-            "print_r(\\$${1:variable});"
-        ],
-        "description": "'print_r' call"
-    },
-    "var_dump": {
-        "prefix": "vd",
-        "body": [
-            "var_dump(\\$${1:variable});"
-        ],
-        "description": "'var_dump' call"
-    },
-    "var_export": {
-        "prefix": "vx",
-        "body": [
-            "var_export(\\$${1:variable});"
-        ],
-        "description": "'var_export' call"
-    }
+  "define": {
+    "prefix": "df",
+    "body": [
+      "define(\"${1:CONSTANT}\", \"${2:value}\");"
+    ],
+    "description": "'define' call"
+  },
+  "include": {
+    "prefix": "inc",
+    "body": [
+      "include ${1:__DIR__.}'${2:path_to_filename}';"
+    ],
+    "description": "'include' statement"
+  },
+  "include_once": {
+    "prefix": "inco",
+    "body": [
+      "include_once ${1:__DIR__.}'${2:path_to_filename}';"
+    ],
+    "description": "'include_once' statement"
+  },
+  "require": {
+    "prefix": "rqr",
+    "body": [
+      "require ${1:__DIR__.}'${2:path_to_filename}';"
+    ],
+    "description": "'require' statement"
+  },
+  "require_once": {
+    "prefix": "rqro",
+    "body": [
+      "require_once ${1:__DIR__.}'${2:path_to_filename}';"
+    ],
+    "description": "'require_once' statement"
+  },
+  "echo": {
+    "prefix": "eco",
+    "body": [
+      "echo \"${1:text}\";"
+    ],
+    "description": "'echo' statement"
+  },
+  "print_r": {
+    "prefix": "pr",
+    "body": [
+      "print_r(\\$${1:variable});"
+    ],
+    "description": "'print_r' call"
+  },
+  "var_dump": {
+    "prefix": "vd",
+    "body": [
+      "var_dump(\\$${1:variable});"
+    ],
+    "description": "'var_dump' call"
+  },
+  "var_export": {
+    "prefix": "vx",
+    "body": [
+      "var_export(\\$${1:variable});"
+    ],
+    "description": "'var_export' call"
+  }
 }

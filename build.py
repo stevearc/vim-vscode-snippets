@@ -5,6 +5,8 @@ import itertools
 import json
 import os
 import re
+import sys
+from json import JSONDecodeError
 import shutil
 import subprocess
 from collections import defaultdict
@@ -30,6 +32,8 @@ def main():
     args = parser.parse_args()
 
     os.makedirs(build_dir, exist_ok=True)
+    shutil.rmtree(snippet_dir)
+    os.makedirs(snippet_dir)
     with open(join(here, "sources.json"), "r") as ifile:
         sources = json.load(ifile)
     lockfile_path = join(here, "sources.lock")
@@ -128,10 +132,20 @@ def build_source(config: str, rev: Optional[str] = None) -> Tuple[str, List[Dict
         path = join(dirpath, data["path"])
         basename = os.path.basename(data["path"])
         destpath = join(dest_dir, basename)
-        shutil.copyfile(path, destpath)
+        # We deserialize & reserialize because some of these packages are very
+        # optimistic about the JSON standard (trailing commas, duplicate keys, comments,
+        # etc)
+        with open(path, "r") as ifile:
+            try:
+                data = json.load(ifile)
+                with open(destpath, "w") as ofile:
+                    json.dump(data, ofile, indent=2)
+            except JSONDecodeError as e:
+                sys.stderr.write(f"File {destpath} is malformed json\n\t{e}\n")
         our_snippets.append(
             {"language": language, "path": str(os.path.relpath(destpath, here))}
         )
+
     return rev, our_snippets
 
 
@@ -182,7 +196,7 @@ def update_readme(packages_by_language: dict) -> None:
 
     language_lines = []
     for language, repos in sorted(packages_by_language.items()):
-        links = [f"[{url_basename(url)}]({url})" for url in repos]
+        links = [f"[{url_basename(url)}]({url})" for url in sorted(repos)]
         language_lines.append(f"* {language} - {', '.join(links)}\n")
 
     all_lines = prefix_lines + language_lines + ["\n"] + postfix_lines

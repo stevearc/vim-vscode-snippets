@@ -25,7 +25,7 @@ Supports any vim package manager, e.g. [Pathogen](https://github.com/tpope/vim-p
 * javascript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git)
 * lua - [vsc-lua](https://github.com/keyring/vsc-lua.git)
 * php - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git)
-* python - [vscode-Python-Extended](https://github.com/tushortz/vscode-Python-Extended.git)
+* python - [vscode-python-snippet-pack](https://github.com/ylcnfrht/vscode-python-snippet-pack.git)
 * rust - [vscode-rust](https://github.com/rust-lang/vscode-rust.git)
 * typescript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git)
 

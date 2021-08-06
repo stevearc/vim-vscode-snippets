@@ -96,6 +96,21 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
     try:
         if os.path.isdir(dirpath):
             if rev is None:
+                remote_main = (
+                    subprocess.check_output(
+                        ["git", "symbolic-ref", "refs/remotes/origin/HEAD"],
+                        cwd=dirpath,
+                    )
+                    .decode("utf-8")
+                    .split("/")[-1]
+                    .strip()
+                )
+                subprocess.check_call(
+                    ["git", "checkout", remote_main],
+                    cwd=dirpath,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                )
                 subprocess.check_call(
                     ["git", "pull"],
                     cwd=dirpath,
@@ -142,7 +157,6 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
     our_snippets = []
     for root in iter_roots(config, dirpath):
         snippet_dest = normpath(join(dest_dir, relpath(root, dirpath)))
-        print(snippet_dest)
         package_file = join(root, "package.json")
         if not os.path.exists(package_file):
             continue

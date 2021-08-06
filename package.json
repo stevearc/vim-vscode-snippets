@@ -148,6 +148,74 @@
       {
         "language": "php",
         "path": "snippets/php-awesome-snippets/tag.json"
+      },
+      {
+        "language": "java",
+        "path": "snippets/vscode/extensions/java/java.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "snippets/vscode/extensions/typescript-basics/typescript.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode/extensions/typescript-basics/typescript.code-snippets"
+      },
+      {
+        "language": "csharp",
+        "path": "snippets/vscode/extensions/csharp/csharp.code-snippets"
+      },
+      {
+        "language": "swift",
+        "path": "snippets/vscode/extensions/swift/swift.code-snippets"
+      },
+      {
+        "language": "coffeescript",
+        "path": "snippets/vscode/extensions/coffeescript/coffeescript.code-snippets"
+      },
+      {
+        "language": "markdown",
+        "path": "snippets/vscode/extensions/markdown-basics/markdown.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "snippets/vscode/extensions/javascript/javascript.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "snippets/vscode/extensions/javascript/javascript.code-snippets"
+      },
+      {
+        "language": "vb",
+        "path": "snippets/vscode/extensions/vb/vb.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "snippets/vscode/extensions/php/php.code-snippets"
+      },
+      {
+        "language": "fsharp",
+        "path": "snippets/vscode/extensions/fsharp/fsharp.code-snippets"
+      },
+      {
+        "language": "powershell",
+        "path": "snippets/vscode/extensions/powershell/powershell.code-snippets"
+      },
+      {
+        "language": "bat",
+        "path": "snippets/vscode/extensions/bat/batchfile.code-snippets"
+      },
+      {
+        "language": "groovy",
+        "path": "snippets/vscode/extensions/groovy/groovy.code-snippets"
+      },
+      {
+        "language": "c",
+        "path": "snippets/vscode/extensions/cpp/c.code-snippets"
+      },
+      {
+        "language": "cpp",
+        "path": "snippets/vscode/extensions/cpp/cpp.code-snippets"
       }
     ]
   }

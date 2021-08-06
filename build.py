@@ -1,25 +1,42 @@
 #!/usr/bin/env python
 import argparse
 import concurrent.futures
-import itertools
+import glob
 import json
 import os
 import re
-import sys
-from json import JSONDecodeError
 import shutil
 import subprocess
+import sys
 from collections import defaultdict
-from os.path import join
-from typing import Dict, List, Optional, Tuple
+from json import JSONDecodeError
+from os.path import abspath, join, normpath, relpath
+from typing import Dict, List, Optional, Sequence, Tuple, Union, cast
+
+import json5
+
+if sys.version_info < (3, 8):
+    from typing_extensions import TypedDict
+else:
+    from typing import TypedDict
 
 here = os.path.dirname(__file__)
 build_dir = join(here, "build")
 snippet_dir = join(here, "snippets")
 
 
+class BaseConfig(TypedDict):
+    url: str
+
+
+class Config(BaseConfig, total=False):
+    license: Union[str, Tuple[str]]
+    remap_language: Dict[str, str]
+    root: str
+
+
 def main():
-    """ Build the snippets from their source repos """
+    """Build the snippets from their source repos"""
     parser = argparse.ArgumentParser(description=main.__doc__)
     parser.add_argument(
         "-u",
@@ -57,6 +74,7 @@ def main():
     packages_by_language = defaultdict(set)
     lock_data = {}
     for config, (git_rev, snippets) in zip(sources, results):
+        config = cast(Config, config)
         all_snippets.extend(snippets)
         lock_data[config["url"]] = git_rev
         for snip in snippets:
@@ -72,7 +90,7 @@ def main():
     update_readme(packages_by_language)
 
 
-def build_source(config: str, rev: Optional[str] = None) -> Tuple[str, List[Dict]]:
+def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[Dict]]:
     dirname = url_basename(config["url"])
     dirpath = join(build_dir, dirname)
     try:
@@ -111,12 +129,6 @@ def build_source(config: str, rev: Optional[str] = None) -> Tuple[str, List[Dict
         .strip()
     )
 
-    with open(join(dirpath, "package.json"), "r") as package:
-        package_data = json.load(package)
-    snippets = package_data.get("contributes", {}).get("snippets", [])
-    if not snippets:
-        raise Exception(f"Source {dirname} is missing snippets in package.json")
-
     dest_dir = join(snippet_dir, dirname)
     os.makedirs(dest_dir, exist_ok=True)
     for license in get_licenses(dirpath, config):
@@ -126,30 +138,47 @@ def build_source(config: str, rev: Optional[str] = None) -> Tuple[str, List[Dict
         shutil.copyfile(license_path, join(dest_dir, license))
 
     language_remap = config.get("remap_language", {})
+
     our_snippets = []
-    for data in snippets:
-        language = language_remap.get(data["language"], data["language"])
-        path = join(dirpath, data["path"])
-        basename = os.path.basename(data["path"])
-        destpath = join(dest_dir, basename)
-        # We deserialize & reserialize because some of these packages are very
-        # optimistic about the JSON standard (trailing commas, duplicate keys, comments,
-        # etc)
-        with open(path, "r") as ifile:
-            try:
-                data = json.load(ifile)
-                with open(destpath, "w") as ofile:
-                    json.dump(data, ofile, indent=2)
-            except JSONDecodeError as e:
-                sys.stderr.write(f"File {destpath} is malformed json\n\t{e}\n")
-        our_snippets.append(
-            {"language": language, "path": str(os.path.relpath(destpath, here))}
-        )
+    for root in iter_roots(config, dirpath):
+        snippet_dest = normpath(join(dest_dir, relpath(root, dirpath)))
+        print(snippet_dest)
+        package_file = join(root, "package.json")
+        if not os.path.exists(package_file):
+            continue
+        with open(package_file, "r") as package:
+            package_data = json.load(package)
+        snippets = package_data.get("contributes", {}).get("snippets", [])
+        if not snippets:
+            continue
+
+        os.makedirs(snippet_dest, exist_ok=True)
+        for data in snippets:
+            language = language_remap.get(data["language"], data["language"])
+            path = normpath(join(root, data["path"]))
+            basename = os.path.basename(data["path"])
+            destpath = abspath(join(snippet_dest, basename))
+            # We deserialize & reserialize because some of these packages are very
+            # optimistic about the JSON standard (trailing commas, duplicate keys, comments,
+            # etc)
+            with open(path, "r") as ifile:
+                try:
+                    data = json5.load(ifile)
+                    with open(destpath, "w") as ofile:
+                        json.dump(data, ofile, indent=2)
+                except JSONDecodeError as e:
+                    sys.stderr.write(f"File {path} is malformed json\n\t{e}\n")
+            our_snippets.append(
+                {"language": language, "path": str(relpath(destpath, here))}
+            )
+
+    if not our_snippets:
+        raise Exception(f"Source {dirname} is missing snippets in package.json")
 
     return rev, our_snippets
 
 
-def get_licenses(dirpath: str, config: dict) -> List[str]:
+def get_licenses(dirpath: str, config: Config) -> Sequence[str]:
     if "license" in config:
         if isinstance(config["license"], str):
             return [config["license"]]
@@ -202,6 +231,15 @@ def update_readme(packages_by_language: dict) -> None:
     all_lines = prefix_lines + language_lines + ["\n"] + postfix_lines
     with open(readme_file, "w") as ofile:
         ofile.write("".join(all_lines))
+
+
+def iter_roots(config: Config, dirpath: str):
+    if "root" in config:
+        for path in glob.glob(join(dirpath, config["root"])):
+            yield path
+        yield dirpath
+    else:
+        yield dirpath
 
 
 if __name__ == "__main__":

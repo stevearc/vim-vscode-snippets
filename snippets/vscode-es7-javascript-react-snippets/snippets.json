@@ -132,12 +132,12 @@
   },
   "destructingObject": {
     "prefix": "dob",
-    "body": "const {${1:propertyName}} = ${2:objectToDestruct}",
+    "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
     "description": "Creates and assigns a local variable using object destructing"
   },
   "destructingArray": {
     "prefix": "dar",
-    "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
+    "body": "const [${2:propertyName}] = ${1:arrayToDestruct}",
     "description": "Creates and assigns a local variable using array destructing"
   },
   "setInterval": {
@@ -217,17 +217,17 @@
   },
   "consoleLogObject": {
     "prefix": "clo",
-    "body": "console.log('${1:object}', ${1:object})",
+    "body": "console.log(`${1:object}`, ${1:object})",
     "description": "Logs property with name."
   },
   "consoleTime": {
     "prefix": "ctm",
-    "body": "console.time('${1:object}')",
+    "body": "console.time(`${1:object}`)",
     "description": "Console time wrapper"
   },
   "consoleTimeEnd": {
     "prefix": "cte",
-    "body": "console.timeEnd('${1:object}')",
+    "body": "console.timeEnd(`${1:object}`)",
     "description": "Console time end wrapper"
   },
   "consoleWarn": {
@@ -404,7 +404,7 @@
       ""
     ]
   },
-  "reactClassCompoment": {
+  "reactClassComponent": {
     "prefix": "rcc",
     "body": [
       "import React, { Component } from 'react'",
@@ -1786,7 +1786,7 @@
   "useDispatch": {
     "prefix": "useDispatch",
     "body": [
-      "const dispatch = useDispatch(${1:function})"
+      "const dispatch = useDispatch()"
     ]
   },
   "typeof": {
@@ -2097,5 +2097,16 @@
       "}",
       ""
     ]
+  },
+  "reactCustomHook": {
+    "prefix": "rch",
+    "body": [
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "\t$2",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Creates a React Custom Hook with ES7 module system"
   }
 }

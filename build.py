@@ -177,7 +177,8 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
             # etc)
             with open(path, "r") as ifile:
                 try:
-                    data = json5.load(ifile)
+                    data = cast(Dict, json5.load(ifile))
+                    data = maybe_unwrap(data)
                     with open(destpath, "w") as ofile:
                         json.dump(data, ofile, indent=2)
                 except JSONDecodeError as e:
@@ -190,6 +191,22 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
         raise Exception(f"Source {dirname} is missing snippets in package.json")
 
     return rev, our_snippets
+
+
+def needs_unwrap(snip_data: Dict) -> bool:
+    for snip in snip_data.values():
+        if "body" not in snip:
+            return True
+    return False
+
+
+def maybe_unwrap(snip_data: Dict) -> Dict:
+    if not needs_unwrap(snip_data):
+        return snip_data
+    ret = {}
+    for snippets in snip_data.values():
+        ret.update(snippets)
+    return ret
 
 
 def get_licenses(dirpath: str, config: Config) -> Sequence[str]:

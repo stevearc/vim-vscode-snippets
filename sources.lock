@@ -10,5 +10,6 @@
   "https://github.com/keyring/vsc-lua.git": "89fd24921c2dc8eceaf830a28e566a26124d134e",
   "https://github.com/h4kst3r/php-awesome-snippets.git": "df0fa89381b2c1b3af5fe128dafabf2240e1d266",
   "https://github.com/microsoft/vscode.git": "a853936292178200eb58c2a9904d7a7dcf98cce8",
-  "https://github.com/xabikos/vscode-javascript.git": "ecfeba765ebdaff72b23e7a5d030e35c941a7c30"
+  "https://github.com/xabikos/vscode-javascript.git": "ecfeba765ebdaff72b23e7a5d030e35c941a7c30",
+  "https://github.com/capaj/vscode-standardjs-snippets.git": "76a82d459e2c1c027a4b7aeb63cc9f69616e0a78"
 }

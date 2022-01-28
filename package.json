@@ -216,6 +216,38 @@
       {
         "language": "vue",
         "path": "snippets/vscode-javascript/snippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "snippets/vscode-standardjs-snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "snippets/vscode-standardjs-snippets/javascript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "snippets/vscode-standardjs-snippets/javascript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode-standardjs-snippets/javascript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "snippets/vscode-standardjs-snippets/react.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode-standardjs-snippets/react-ts.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "snippets/vscode-standardjs-snippets/apollo.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode-standardjs-snippets/apollo.json"
       }
     ]
   }

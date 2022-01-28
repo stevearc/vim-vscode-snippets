@@ -42,5 +42,8 @@
   },
   {
     "url": "https://github.com/xabikos/vscode-javascript.git"
+  },
+  {
+    "url": "https://github.com/capaj/vscode-standardjs-snippets.git"
   }
 ]

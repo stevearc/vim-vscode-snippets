@@ -22,7 +22,7 @@ else:
     from typing import TypedDict
 
 here = os.path.dirname(__file__)
-build_dir = join(here, "build")
+build_dir = join(here, "_build")
 snippet_dir = join(here, "snippets")
 LOG = logging.getLogger(__name__)
 

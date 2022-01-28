@@ -7,27 +7,19 @@
       },
       {
         "language": "javascript",
-        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+        "path": "snippets/vscode-es7-javascript-react-snippets/generated.json"
       },
       {
         "language": "javascriptreact",
-        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+        "path": "snippets/vscode-es7-javascript-react-snippets/generated.json"
       },
       {
         "language": "typescript",
-        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
+        "path": "snippets/vscode-es7-javascript-react-snippets/generated.json"
       },
       {
         "language": "typescriptreact",
-        "path": "snippets/vscode-es7-javascript-react-snippets/snippets.json"
-      },
-      {
-        "language": "typescript",
-        "path": "snippets/vscode-es7-javascript-react-snippets/ts-snippets.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "snippets/vscode-es7-javascript-react-snippets/ts-snippets.json"
+        "path": "snippets/vscode-es7-javascript-react-snippets/generated.json"
       },
       {
         "language": "python",

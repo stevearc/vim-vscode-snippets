@@ -4,7 +4,7 @@
   },
   {
     "url": "https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git",
-    "license": "LICENCE"
+    "hook": "yarn && yarn compile"
   },
   {
     "url": "https://github.com/ylcnfrht/vscode-python-snippet-pack.git"

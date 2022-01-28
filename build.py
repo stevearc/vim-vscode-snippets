@@ -32,6 +32,7 @@ class BaseConfig(TypedDict):
 class Config(BaseConfig, total=False):
     license: Union[str, Tuple[str]]
     remap_language: Dict[str, str]
+    hook: str
     root: str
 
 
@@ -143,6 +144,10 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
         .decode("utf-8")
         .strip()
     )
+
+    hook = config.get("hook")
+    if hook is not None:
+        subprocess.run(hook, cwd=dirpath, shell=True)
 
     dest_dir = join(snippet_dir, dirname)
     os.makedirs(dest_dir, exist_ok=True)

@@ -1,52 +1,113 @@
-# vim-vsnip-snippets
+# vim-vscode-snippets
+
 A collection of vscode snippets for vim
 
-> Why does this project exist?
+The VSCode marketplace has a large number of extensions with code snippets
+included. These snippets are not available in a format that can be easily
+ingested by vim snippet plugins (e.g.
+[vim-vsnip](https://github.com/hrsh7th/vim-vsnip) or
+[luasnip](https://github.com/L3MON4D3/LuaSnip)). This plugin is the missing link
+that gathers together a collection of snippets from VSCode extensions for many
+languages. This repo contains _only_ the snippet files from those extensions.
 
-Inspired by [vim-polyglot](https://github.com/sheerun/vim-polyglot), I didn't
-want to have to hunt down and find a ton of different VSCode extensions just to
-have vsnip snippets for the languages I work with. I want one easy installation
-that *doesn't* come with a bunch of bloat (a lot of those extensions have images
-or even videos in their repo). This repo has *only* the snippet files for a
-range of languages.
-
-This repository is in its early days, and I've only added extensions for a few
-languages that I use most often. If your favorite language is missing, please
+If there is a language or extension missing, please
 submit a pull request with the missing extension (see
 [Contributing](#contributing) below).
 
 ## Installation
-Supports any vim package manager, e.g. [Pathogen](https://github.com/tpope/vim-pathogen), [Vundle](https://github.com/VundleVim/Vundle.vim), [NeoBundle](https://github.com/Shougo/neobundle.vim), or [Plug](https://github.com/junegunn/vim-plug).
+
+supports all the usual plugin managers
+
+<details>
+  <summary>Packer</summary>
+
+```lua
+require('packer').startup(function()
+    use {'stevearc/vim-vscode-snippets'}
+end)
+```
+
+</details>
+
+<details>
+  <summary>Paq</summary>
+
+```lua
+require "paq" {
+    {'stevearc/vim-vscode-snippets'};
+}
+```
+
+</details>
+
+<details>
+  <summary>vim-plug</summary>
+
+```vim
+Plug 'stevearc/vim-vscode-snippets'
+```
+
+</details>
+
+<details>
+  <summary>dein</summary>
+
+```vim
+call dein#add('stevearc/vim-vscode-snippets')
+```
+
+</details>
+
+<details>
+  <summary>Pathogen</summary>
+
+```sh
+git clone --depth=1 https://github.com/stevearc/vim-vscode-snippets.git ~/.vim/bundle/
+```
+
+</details>
+
+<details>
+  <summary>Neovim native package</summary>
+
+```sh
+git clone --depth=1 https://github.com/stevearc/vim-vscode-snippets.git \
+  "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/vim-vscode-snippets/start/vim-vscode-snippets
+```
+
+</details>
 
 ## Languages
-* bat - [vscode](https://github.com/microsoft/vscode.git)
-* c - [vscode](https://github.com/microsoft/vscode.git)
-* coffeescript - [vscode](https://github.com/microsoft/vscode.git)
-* cpp - [vscode](https://github.com/microsoft/vscode.git)
-* csharp - [vscode-csharp-snippets](https://github.com/J0rgeSerran0/vscode-csharp-snippets.git), [vscode-unity-code-snippets](https://github.com/kleber-swf/vscode-unity-code-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
-* fsharp - [vscode](https://github.com/microsoft/vscode.git)
-* go - [vscode-go](https://github.com/golang/vscode-go.git)
-* groovy - [vscode](https://github.com/microsoft/vscode.git)
-* html - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
-* java - [vscode](https://github.com/microsoft/vscode.git)
-* javascript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
-* lua - [vsc-lua](https://github.com/keyring/vsc-lua.git)
-* markdown - [vscode](https://github.com/microsoft/vscode.git)
-* php - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
-* powershell - [vscode](https://github.com/microsoft/vscode.git)
-* python - [vscode-python-snippet-pack](https://github.com/ylcnfrht/vscode-python-snippet-pack.git)
-* rust - [vscode-rust](https://github.com/rust-lang/vscode-rust.git)
-* swift - [vscode](https://github.com/microsoft/vscode.git)
-* typescript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
-* vb - [vscode](https://github.com/microsoft/vscode.git)
-* vue - [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
+
+- bat - [vscode](https://github.com/microsoft/vscode.git)
+- c - [vscode](https://github.com/microsoft/vscode.git)
+- coffeescript - [vscode](https://github.com/microsoft/vscode.git)
+- cpp - [vscode](https://github.com/microsoft/vscode.git)
+- csharp - [vscode-csharp-snippets](https://github.com/J0rgeSerran0/vscode-csharp-snippets.git), [vscode-unity-code-snippets](https://github.com/kleber-swf/vscode-unity-code-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
+- fsharp - [vscode](https://github.com/microsoft/vscode.git)
+- go - [vscode-go](https://github.com/golang/vscode-go.git)
+- groovy - [vscode](https://github.com/microsoft/vscode.git)
+- html - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
+- java - [vscode](https://github.com/microsoft/vscode.git)
+- javascript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
+- lua - [vsc-lua](https://github.com/keyring/vsc-lua.git)
+- markdown - [vscode](https://github.com/microsoft/vscode.git)
+- php - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
+- powershell - [vscode](https://github.com/microsoft/vscode.git)
+- python - [vscode-python-snippet-pack](https://github.com/ylcnfrht/vscode-python-snippet-pack.git)
+- rust - [vscode-rust](https://github.com/rust-lang/vscode-rust.git)
+- swift - [vscode](https://github.com/microsoft/vscode.git)
+- typescript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
+- vb - [vscode](https://github.com/microsoft/vscode.git)
+- vue - [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
 
 ## Contributing
+
 All snippets are generated programmatically. To add new extensions:
 
-* Edit `sources.json` 
-* Run the `build.py` script (requires `pip install json5`)
-* Open a pull request
+- Edit `sources.json`
+- Run the `build.py` script (requires `pip install json5`)
+- Open a pull request
 
 ## License
 

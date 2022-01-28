@@ -262,9 +262,9 @@ def update_readme(packages_by_language: dict) -> None:
     language_lines = []
     for language, repos in sorted(packages_by_language.items()):
         links = [f"[{url_basename(url)}]({url})" for url in sorted(repos)]
-        language_lines.append(f"* {language} - {', '.join(links)}\n")
+        language_lines.append(f"- {language} - {', '.join(links)}\n")
 
-    all_lines = prefix_lines + language_lines + ["\n"] + postfix_lines
+    all_lines = prefix_lines + ["\n"] + language_lines + ["\n"] + postfix_lines
     with open(readme_file, "w") as ofile:
         ofile.write("".join(all_lines))
 

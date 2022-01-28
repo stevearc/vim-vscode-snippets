@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import glob
 import json
+import logging
 import os
 import re
 import shutil
@@ -23,6 +24,7 @@ else:
 here = os.path.dirname(__file__)
 build_dir = join(here, "build")
 snippet_dir = join(here, "snippets")
+LOG = logging.getLogger(__name__)
 
 
 class BaseConfig(TypedDict):
@@ -47,7 +49,20 @@ def main():
     parser.add_argument(
         "-p", type=int, help="Number of threads (default %(default)s)", default=5
     )
+    parser.add_argument(
+        "-l",
+        "--log-level",
+        type=lambda l: logging.getLevelName(l.upper()),
+        default=logging.WARNING,
+        help="Stdout logging level (default 'warning')",
+    )
     args = parser.parse_args()
+    handler = logging.StreamHandler(sys.stdout)
+    formatter = logging.Formatter("%(levelname)s %(asctime)s [%(name)s] %(message)s")
+    handler.setFormatter(formatter)
+    logging.root.addHandler(handler)
+    level = logging.getLevelName(args.log_level)
+    logging.root.setLevel(level)
 
     os.makedirs(build_dir, exist_ok=True)
     shutil.rmtree(snippet_dir)
@@ -81,22 +96,27 @@ def main():
         for snip in snippets:
             packages_by_language[snip["language"]].add(config["url"])
 
+    LOG.info("Writing package.json")
     package_data = {"contributes": {"snippets": all_snippets}}
     with open(join(here, "package.json"), "w") as package_file:
         json.dump(package_data, package_file, indent=2)
 
+    LOG.info("Writing sources.lock")
     with open(lockfile_path, "w") as ofile:
         json.dump(lock_data, ofile, indent=2)
 
+    LOG.info("Writing README")
     update_readme(packages_by_language)
 
 
 def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[Dict]]:
     dirname = url_basename(config["url"])
+    LOG.info("Building snippets from %s", dirname)
     dirpath = join(build_dir, dirname)
     try:
         if os.path.isdir(dirpath):
             if rev is None:
+                LOG.info("Updating repo %s", dirname)
                 remote_main = (
                     subprocess.check_output(
                         ["git", "symbolic-ref", "refs/remotes/origin/HEAD"],
@@ -119,6 +139,7 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
                     stderr=subprocess.DEVNULL,
                 )
         else:
+            LOG.info("Cloning repo %s", dirname)
             subprocess.check_call(
                 ["git", "clone", config["url"]],
                 cwd=build_dir,
@@ -129,6 +150,7 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
         raise Exception(f"Error cloning or updating {dirname}")
 
     if rev is not None:
+        LOG.info("Checking out %s(%s)", dirname, rev)
         try:
             subprocess.check_call(
                 ["git", "checkout", rev],
@@ -147,7 +169,9 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
 
     hook = config.get("hook")
     if hook is not None:
-        subprocess.run(hook, cwd=dirpath, shell=True)
+        LOG.info("Running hook in dir(%s): %s", dirpath, hook)
+        output = subprocess.check_output(hook, cwd=dirpath, shell=True)
+        LOG.debug("Hook output(%s):\n%s", dirpath, output)
 
     dest_dir = join(snippet_dir, dirname)
     os.makedirs(dest_dir, exist_ok=True)
@@ -183,11 +207,13 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
             with open(path, "r") as ifile:
                 try:
                     data = cast(Dict, json5.load(ifile))
-                    data = maybe_unwrap(data)
-                    with open(destpath, "w") as ofile:
-                        json.dump(data, ofile, indent=2)
                 except JSONDecodeError as e:
-                    sys.stderr.write(f"File {path} is malformed json\n\t{e}\n")
+                    LOG.exception("File %s is malformed json", path)
+                    continue
+            data = maybe_unwrap(data)
+            LOG.info("Writing snippet file %s", destpath)
+            with open(destpath, "w") as ofile:
+                json.dump(data, ofile, indent=2)
             our_snippets.append(
                 {"language": language, "path": str(relpath(destpath, here))}
             )

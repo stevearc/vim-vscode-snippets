@@ -34,6 +34,14 @@
         "path": "snippets/vscode-ruby/packages/vscode-ruby/erb.json"
       },
       {
+        "language": "c",
+        "path": "snippets/vscode-cpp-snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "snippets/vscode-cpp-snippets/cpp.json"
+      },
+      {
         "language": "go",
         "path": "snippets/vscode-go/go.json"
       },

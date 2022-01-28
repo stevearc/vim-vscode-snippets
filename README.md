@@ -80,9 +80,9 @@ git clone --depth=1 https://github.com/stevearc/vim-vscode-snippets.git \
 ## Languages
 
 - bat - [vscode](https://github.com/microsoft/vscode.git)
-- c - [vscode](https://github.com/microsoft/vscode.git)
+- c - [vscode](https://github.com/microsoft/vscode.git), [vscode-cpp-snippets](https://github.com/one-harsh/vscode-cpp-snippets.git)
 - coffeescript - [vscode](https://github.com/microsoft/vscode.git)
-- cpp - [vscode](https://github.com/microsoft/vscode.git)
+- cpp - [vscode](https://github.com/microsoft/vscode.git), [vscode-cpp-snippets](https://github.com/one-harsh/vscode-cpp-snippets.git)
 - csharp - [vscode-csharp-snippets](https://github.com/J0rgeSerran0/vscode-csharp-snippets.git), [vscode-unity-code-snippets](https://github.com/kleber-swf/vscode-unity-code-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
 - erb - [vscode-ruby](https://github.com/rubyide/vscode-ruby.git)
 - fsharp - [vscode](https://github.com/microsoft/vscode.git)

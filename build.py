@@ -36,6 +36,7 @@ class Config(BaseConfig, total=False):
     remap_language: Dict[str, str]
     hook: str
     root: str
+    min_snippets: int
 
 
 def main():
@@ -195,12 +196,19 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
         if not snippets:
             continue
 
-        os.makedirs(snippet_dest, exist_ok=True)
         for data in snippets:
             language = language_remap.get(data["language"], data["language"])
             path = normpath(join(root, data["path"]))
             basename = os.path.basename(data["path"])
             destpath = abspath(join(snippet_dest, basename))
+            if os.path.exists(destpath):
+                # Some extensions use the same snippet file for multiple languages.
+                # We only need to process them once.
+                our_snippets.append(
+                    {"language": language, "path": str(relpath(destpath, here))}
+                )
+                continue
+
             # We deserialize & reserialize because some of these packages are very
             # optimistic about the JSON standard (trailing commas, duplicate keys, comments,
             # etc)
@@ -210,8 +218,16 @@ def build_source(config: Config, rev: Optional[str] = None) -> Tuple[str, List[D
                 except JSONDecodeError as e:
                     LOG.exception("File %s is malformed json", path)
                     continue
+
+            # vscode has some extensions that helpfully only give you a "Region Start" and "Region End" snippet.
+            # This allows us to filter those out
+            if "min_snippets" in config and len(data) < config["min_snippets"]:
+                LOG.info("Skip %s: only %d snippets", path, len(data))
+                continue
+
             data = maybe_unwrap(data)
-            LOG.info("Writing snippet file %s", destpath)
+            LOG.info("Writing snippet file %s", join(snippet_dest, basename))
+            os.makedirs(snippet_dest, exist_ok=True)
             with open(destpath, "w") as ofile:
                 json.dump(data, ofile, indent=2)
             our_snippets.append(

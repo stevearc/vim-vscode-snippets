@@ -37,7 +37,8 @@
   },
   {
     "url": "https://github.com/microsoft/vscode.git",
-    "root": "extensions/*"
+    "root": "extensions/*",
+    "min_snippets": 3
   },
   {
     "url": "https://github.com/xabikos/vscode-javascript.git"

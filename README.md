@@ -27,9 +27,9 @@ Supports any vim package manager, e.g. [Pathogen](https://github.com/tpope/vim-p
 * fsharp - [vscode](https://github.com/microsoft/vscode.git)
 * go - [vscode-go](https://github.com/golang/vscode-go.git)
 * groovy - [vscode](https://github.com/microsoft/vscode.git)
-* html - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git)
+* html - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
 * java - [vscode](https://github.com/microsoft/vscode.git)
-* javascript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
+* javascript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
 * lua - [vsc-lua](https://github.com/keyring/vsc-lua.git)
 * markdown - [vscode](https://github.com/microsoft/vscode.git)
 * php - [php-awesome-snippets](https://github.com/h4kst3r/php-awesome-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
@@ -37,8 +37,9 @@ Supports any vim package manager, e.g. [Pathogen](https://github.com/tpope/vim-p
 * python - [vscode-python-snippet-pack](https://github.com/ylcnfrht/vscode-python-snippet-pack.git)
 * rust - [vscode-rust](https://github.com/rust-lang/vscode-rust.git)
 * swift - [vscode](https://github.com/microsoft/vscode.git)
-* typescript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git)
+* typescript - [vscode-es7-javascript-react-snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git), [vscode](https://github.com/microsoft/vscode.git), [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
 * vb - [vscode](https://github.com/microsoft/vscode.git)
+* vue - [vscode-javascript](https://github.com/xabikos/vscode-javascript.git)
 
 ## Contributing
 All snippets are generated programmatically. To add new extensions:

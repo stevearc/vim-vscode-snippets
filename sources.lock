@@ -7,5 +7,6 @@
   "https://github.com/kleber-swf/vscode-unity-code-snippets.git": "38192f494b950d291908bf81984c008411736487",
   "https://github.com/keyring/vsc-lua.git": "89fd24921c2dc8eceaf830a28e566a26124d134e",
   "https://github.com/h4kst3r/php-awesome-snippets.git": "df0fa89381b2c1b3af5fe128dafabf2240e1d266",
-  "https://github.com/microsoft/vscode.git": "c2fab30adf96c36f5daad135b6ae7991f5576894"
+  "https://github.com/microsoft/vscode.git": "c2fab30adf96c36f5daad135b6ae7991f5576894",
+  "https://github.com/xabikos/vscode-javascript.git": "ecfeba765ebdaff72b23e7a5d030e35c941a7c30"
 }

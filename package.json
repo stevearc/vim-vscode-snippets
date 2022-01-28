@@ -216,6 +216,30 @@
       {
         "language": "cpp",
         "path": "snippets/vscode/extensions/cpp/cpp.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "snippets/vscode-javascript/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "snippets/vscode-javascript/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "snippets/vscode-javascript/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "snippets/vscode-javascript/snippets.json"
+      },
+      {
+        "language": "html",
+        "path": "snippets/vscode-javascript/snippets.json"
+      },
+      {
+        "language": "vue",
+        "path": "snippets/vscode-javascript/snippets.json"
       }
     ]
   }

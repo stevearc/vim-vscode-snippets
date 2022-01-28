@@ -14,10 +14,7 @@
   },
   {
     "url": "https://github.com/rust-lang/vscode-rust.git",
-    "license": [
-      "LICENSE-MIT",
-      "LICENSE-APACHE"
-    ]
+    "license": ["LICENSE-MIT", "LICENSE-APACHE"]
   },
   {
     "url": "https://github.com/kleber-swf/vscode-unity-code-snippets.git"
@@ -34,5 +31,8 @@
   {
     "url": "https://github.com/microsoft/vscode.git",
     "root": "extensions/*"
+  },
+  {
+    "url": "https://github.com/xabikos/vscode-javascript.git"
   }
 ]

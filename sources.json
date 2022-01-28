@@ -10,6 +10,10 @@
     "url": "https://github.com/ylcnfrht/vscode-python-snippet-pack.git"
   },
   {
+    "url": "https://github.com/rubyide/vscode-ruby.git",
+    "root": "packages/vscode-ruby"
+  },
+  {
     "url": "https://github.com/golang/vscode-go.git"
   },
   {

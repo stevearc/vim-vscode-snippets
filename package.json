@@ -26,6 +26,14 @@
         "path": "snippets/vscode-python-snippet-pack/python_snippets.json"
       },
       {
+        "language": "ruby",
+        "path": "snippets/vscode-ruby/packages/vscode-ruby/ruby.json"
+      },
+      {
+        "language": "erb",
+        "path": "snippets/vscode-ruby/packages/vscode-ruby/erb.json"
+      },
+      {
         "language": "go",
         "path": "snippets/vscode-go/go.json"
       },

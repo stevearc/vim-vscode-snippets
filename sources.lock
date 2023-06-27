@@ -1,15 +1,15 @@
 {
   "https://github.com/J0rgeSerran0/vscode-csharp-snippets.git": "3522981cf1700ce0e7ae13a5b57cfd5d2b67a9d8",
-  "https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git": "3a624f7c44da5c0207568e3b364d0a463d724954",
+  "https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git": "185bb91a0b692c54136663464e8225872c434637",
   "https://github.com/ylcnfrht/vscode-python-snippet-pack.git": "7fa16e40449c3edac77e9fabf66ae53658949ee6",
-  "https://github.com/rubyide/vscode-ruby.git": "ba8f2aabcbede3eb824514f90d1e0e17b7f6b52c",
+  "https://github.com/rubyide/vscode-ruby.git": "79031948d032e97cf2a5116e27c167ade5125e15",
   "https://github.com/one-harsh/vscode-cpp-snippets.git": "f481dcfe34ef410ce71f67500706a3043e81ca03",
-  "https://github.com/golang/vscode-go.git": "d5403b9615c3f98b8e15b69d21f5161195673b5b",
-  "https://github.com/rust-lang/vscode-rust.git": "b1ae67b06640ffab6e1ebb72e07364b4477dfbf1",
-  "https://github.com/kleber-swf/vscode-unity-code-snippets.git": "38192f494b950d291908bf81984c008411736487",
+  "https://github.com/golang/vscode-go.git": "3b2da9a1640b8eb5dfe2dd0f5771d1666f56aa69",
+  "https://github.com/rust-lang/vscode-rust.git": "0c49e2bd1ba95ebdbfdf911e8ca609c2be096027",
+  "https://github.com/kleber-swf/vscode-unity-code-snippets.git": "2d2a30f75f874387ec2d5f170417d0af87832b40",
   "https://github.com/keyring/vsc-lua.git": "89fd24921c2dc8eceaf830a28e566a26124d134e",
   "https://github.com/h4kst3r/php-awesome-snippets.git": "df0fa89381b2c1b3af5fe128dafabf2240e1d266",
-  "https://github.com/microsoft/vscode.git": "a853936292178200eb58c2a9904d7a7dcf98cce8",
+  "https://github.com/microsoft/vscode.git": "b114662b7afdb3823726bdc8de8d31d17d1588a9",
   "https://github.com/xabikos/vscode-javascript.git": "ecfeba765ebdaff72b23e7a5d030e35c941a7c30",
   "https://github.com/capaj/vscode-standardjs-snippets.git": "76a82d459e2c1c027a4b7aeb63cc9f69616e0a78"
 }

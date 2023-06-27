@@ -96,6 +96,7 @@ def main():
         lock_data[config["url"]] = git_rev
         for snip in snippets:
             packages_by_language[snip["language"]].add(config["url"])
+    all_snippets.sort(key=lambda x: (x["language"], x["path"]))
 
     LOG.info("Writing package.json")
     package_data = {"contributes": {"snippets": all_snippets}}

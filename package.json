@@ -23,7 +23,7 @@
       },
       {
         "language": "go",
-        "path": "snippets/vscode-go/go.json"
+        "path": "snippets/vscode-go/extension/go.json"
       },
       {
         "language": "groovy",

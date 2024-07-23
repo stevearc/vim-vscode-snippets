@@ -17,7 +17,8 @@
     "url": "https://github.com/one-harsh/vscode-cpp-snippets.git"
   },
   {
-    "url": "https://github.com/golang/vscode-go.git"
+    "url": "https://github.com/golang/vscode-go.git",
+    "root": "extension"
   },
   {
     "url": "https://github.com/rust-lang/vscode-rust.git",
